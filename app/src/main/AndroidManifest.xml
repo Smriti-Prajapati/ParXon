@@ -15,10 +15,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParXonDemo1"
         tools:targetApi="31">
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
 
+        <!-- 🔹 Splash Screen (Launch Activity) -->
+        <activity
+            android:name=".SplashScreenOk"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 🔹 Main App Screens -->
+        <activity android:name=".MainActivity" android:exported="true" />
+        <activity android:name=".LoginActivity" android:exported="false" />
+
+        <!-- 🔹 Game Activities -->
+        <activity android:name=".GameActivity" android:exported="false" />
+        <activity android:name=".GameActivityDetails" android:exported="false" />
+
+        <!-- 🔹 Exercise Activities -->
+        <activity android:name=".SecondActivity" android:exported="false" />
+        <activity android:name=".SecondActivity2" android:exported="false" />
+        <activity android:name=".SecondActivity3" android:exported="false" />
+        <activity android:name=".ThirdActivity" android:exported="false" />
+        <activity android:name=".ThirdActivity2" android:exported="false" />
+        <activity android:name=".ThirdActivity3" android:exported="false" />
+
+        <!-- 🔹 Health Calculators -->
+        <activity android:name=".BMICalculator" android:exported="false" />
+
+        <activity android:name=".WaterIntakeCalculator"
+            android:exported="true" />
+
+
+
+        <!-- 🔹 Firebase Messaging Service -->
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -27,42 +59,6 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name=".GameActivityDetails"
-            android:exported="false" />
-        <activity
-            android:name=".ThirdActivity3"
-            android:exported="false" />
-        <activity
-            android:name=".ThirdActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".ThirdActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SecondActivity3"
-            android:exported="false" />
-        <activity
-            android:name=".SecondActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SplashScreenOk"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

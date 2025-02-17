@@ -66,7 +66,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    >
+                    tools:ignore="OnClick">
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif-monospace"
                             android:padding="5.0dp"
-                            android:text="Exercises:5"
+                            android:text="Exercises:15"
                             android:textColor="#3c7962"
                             android:textSize="20.0dp"
                             android:textStyle="bold"
@@ -110,7 +110,7 @@
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_5"
+                            android:src="@drawable/exercise_6"
                             />
 
                     </LinearLayout>
@@ -167,7 +167,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    >
+                    tools:ignore="OnClick">
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="serif-monospace"
                             android:padding="5.0dp"
-                            android:text="Exercises:5"
+                            android:text="Exercises:10"
                             android:textColor="#3c7962"
                             android:textSize="20.0dp"
                             android:textStyle="bold"
@@ -211,7 +211,7 @@
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_5"
+                            android:src="@drawable/exercise_19"
                             />
 
                     </LinearLayout>
@@ -268,7 +268,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    >
+                    tools:ignore="OnClick">
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -310,7 +310,7 @@
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/exercise_6"
+                            android:src="@drawable/exercise_24"
                             />
 
                     </LinearLayout>
@@ -364,7 +364,7 @@
                 android:background="@drawable/backgroundcrop"
                 android:orientation="vertical"
 
-                >
+                tools:ignore="OnClick">
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -451,6 +451,28 @@
 
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/bmiButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Open BMI Calculator"
+                android:padding="10dp"
+                android:backgroundTint="#3c7962"
+                android:textColor="#fff"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/waterButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Open Water Intake Calculator"
+                android:padding="10dp"
+                android:backgroundTint="#3c7962"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="20dp"/>
+
+
 
 
 

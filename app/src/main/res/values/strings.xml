@@ -1,67 +1,139 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ParXonDemo1</string>
 
-    <string name="pose1">    Step 1:- Sit upright on a chair with your feet flat on the floor.\n\n
-                             Step 2:- Lift your toes off the ground while keeping your heels firmly planted.\n\n
-                             Step 3:- Lower your toes back down and repeat, alternating feet or tapping both toes together. \n\n
+    <string name="pose1">    Step 1:-Place one foot directly in front of the other. \n\n
+                             Step 2:-Walk in a straight line while keeping balance.\n\n
+                             Step 3:-Use a wall or railing for support if needed. \n\n
                              </string>
-    <string name="pose2">    Step 1:- Stand upright with your feet hip-width apart. \n\n
-                             Step 2:- Lift one knee toward your chest, then lower it back down.\n\n
-                             Step 3:- Alternate lifting your knees in a steady marching motion.\n\n
+    <string name="pose2">    Step 1:-Extend your fingers wide.\n\n
+                             Step 2:-Tap the thumb to each finger one at a time. \n\n
+                             Step 3:-Repeat on both hands to improve dexterity. \n\n
                              </string>
-    <string name="pose3">    Step 1:- Sit or stand comfortably with your arms relaxed at your sides. \n\n
+    <string name="pose3">    Step 1:-Sit on a chair with feet flat on the ground.  \n\n
+                             Step 2:-Twist your torso to one side, holding onto the chair. \n\n
+                             Step 3:-Hold for a few seconds and repeat on the other side.\n\n
+                             </string>
+    <string name="pose4">    Step 1:- Place a small object on the ground. \n\n
+                             Step 2:- Step over it carefully while maintaining balance.\n\n
+                             Step 3:- Repeat in both directions to enhance coordination.\n\n
+                             </string>
+    <string name="pose5">    Step 1:- Sit in a sturdy chair with feet flat.\n\n
+                             Step 2:- Lean forward and push through your legs to stand up.\n\n
+                             Step 3:- Slowly sit back down and repeat. \n\n
+                            </string>
+
+
+    <string name="pose6">    Step 1:- Stand behind a chair for support.\n\n
+                             Step 2:- Lift one leg straight out in front of you.\n\n
+                             Step 3:- Lower it back down and switch legs.\n\n
+                             </string>
+    <string name="pose7">    Step 1:-Stand upright and lift one knee up. \n\n
+                             Step 2:- Lower it and lift the other knee. \n\n
+                             Step 3:- Repeat, maintaining a steady rhythm.\n\n
+                             </string>
+    <string name="pose8">    Step 1:- Sit or stand with your back straight.\n\n
                              Step 2:- Roll your shoulders forward in a circular motion.\n\n
-                             Step 3:- After a few rolls, reverse the direction by rolling your shoulders backward.\n\n
+                             Step 3:- Reverse direction and repeat. \n\n
+                            </string>
+    <string name="pose9">    Step 1:- Hold onto a sturdy surface. \n\n
+                             Step 2:-Lift one leg out to the side. \n\n
+                             Step 3:- Lower it and repeat with the other leg.\n\n
+                            </string>
+    <string name="pose10">   Step 1:-Hold a small ball or stress ball.  \n\n
+                             Step 2:-Squeeze it firmly, then relea \n\n
+                             Step 3:-Repeat multiple times with both hands. \n\n
+                            </string>
+    <string name="pose11">    Step 1:-Sit with feet flat on the floor. \n\n
+                             Step 2:-Extend one leg straight out in front. \n\n
+                             Step 3:- Hold, then lower and repeat on the other leg. \n\n
                              </string>
-    <string name="pose4">    Step 1:- Stand facing a wall, about arm’s length away, with your hands flat on the wall at shoulder height. \n\n
-                             Step 2:- Lean toward the wall by bending your elbows, keeping your body straight.\n\n
-                             Step 3:- Push back to the starting position, straightening your arms.\n\n
+    <string name="pose12">    Step 1:- Stand with feet hip-width apart. \n\n
+                             Step 2:- Lift onto your toes, then lower down.\n\n
+                             Step 3:- Lift your heels, then return to the starting position.\n\n
                              </string>
-    <string name="pose5">    Step 1:- Stand upright and take a step forward, placing the heel of one foot directly in front of the toes of the other foot. \n\n
-                             Step 2:- Shift your weight to the front foot and take another step, maintaining the heel-to-toe pattern.\n\n
-                             Step 3:- Continue walking in a straight line, keeping your balance with each step.\n\n
+    <string name="pose13">    Step 1:- Stand facing a wall with arms outstretched. \n\n
+                             Step 2:- Bend elbows to lower yourself towards the wall.\n\n
+                             Step 3:- Push back to the starting position.\n\n
+                             </string>
+    <string name="pose14">    Step 1:- Stand with feet apart and hands on your hips. \n\n
+                             Step 2:-Twist your upper body slowly to one side.\n\n
+                             Step 3:- Return to the center and repeat on the other side\n\n
+                             </string>
+    <string name="pose15">    Step 1:- Hold a pen and write short words or numbers.\n\n
+                             Step 2:- Focus on making smooth, controlled strokes.\n\n
+                             Step 3:-Repeat to improve hand coordination. \n\n
                             </string>
 
 
-    <string name="pose6">    Step 1:- Stand upright with your feet hip-width apart.\n\n
-                             Step 2:- Step forward with one leg, lowering your body until both knees are at 90-degree angles.\n\n
-                             Step 3:- Push through the front foot to return to the starting position, then repeat with the other leg.
+    <string name="pose16">    Step 1:-Stand upright and swing your arms forward. \n\n
+                             Step 2:- Swing them backward in a controlled motion. \n\n
+                             Step 3:- Repeat 10 times in both directions.\n\n
                              </string>
-    <string name="pose7">    Step 1:- Stand upright with your feet together.\n\n
-                             Step 2:- Step forward with one foot, placing it directly in front of the other, heel to toe. \n\n
-                             Step 3:- Continue walking by placing one foot directly in front of the other, maintaining balance with each step.\n\n
+    <string name="pose17">    Step 1:-Sit in a chair and extend one leg. \n\n
+                             Step 2:- Tap your toes up and down.\n\n
+                             Step 3:- Switch legs and repeat.\n\n
                              </string>
-    <string name="pose8">    Step 1:- Stand upright with your arms relaxed at your sides.\n\n
-                             Step 2:- Lift one knee toward your chest while swinging the opposite arm forward.\n\n
-                             Step 3:- Lower your leg and arm, then repeat with the opposite arm and leg in a marching motion. \n\n
+    <string name="pose18">    Step 1:- Stand with feet apart.\n\n
+                             Step 2:- Shift weight from one foot to the other.\n\n
+                             Step 3:- Maintain balance and repeat.\n\n
                             </string>
-    <string name="pose9">    Step 1:- Sit upright in a sturdy chair with your feet flat on the floor. \n\n
-                             Step 2:- Raise your arms above your head and gently lean to one side, stretching your side body.\n\n
-                             Step 3:- Return to the center, then lean to the other side, repeating the stretch.
+    <string name="pose19">    Step 1:- Sit with arms at your sides. \n\n
+                             Step 2:- Raise both arms to shoulder height.\n\n
+                             Step 3:- Lower them slowly and repeat.\n\n
                             </string>
-    <string name="pose10">   Step 1:- Stand upright with your feet hip-width apart, holding onto a chair or wall for support. \n\n
-                             Step 2:- Raise your heels off the ground, balancing on the balls of your feet.\n\n
-                             Step 3:- Lower your heels back to the floor slowly, and repeat the movement.
+    <string name="pose20">   Step 1:- Tilt your head gently to one side. \n\n
+                             Step 2:- Hold for a few seconds, then switch sides.\n\n
+                             Step 3:- Repeat to release neck tension.\n\n
                             </string>
-    <string name="pose11">   Step 1:- Stand in front of a low platform or step. \n\n
-                             Step 2:- Step up with one foot, followed by the other foot.\n\n
-                             Step 3:- Step down with one foot, then the other, and repeat the steps.
+    <string name="pose21">    Step 1:- Hold small weights or water bottles.\n\n
+                             Step 2:- Press them upward above your head.\n\n
+                             Step 3:- Lower them back down and repeat. \n\n
+                             </string>
+    <string name="pose22">    Step 1:- Stand with one foot forward. \n\n
+                             Step 2:- Lean forward to stretch the back leg.\n\n
+                             Step 3:- Hold and switch legs.\n\n
+                             </string>
+    <string name="pose23">    Step 1:- Extend your fingers wide. \n\n
+                             Step 2:- Make a fist, then open again.\n\n
+                             Step 3:- Repeat to enhance finger flexibility.\n\n
+                             </string>
+    <string name="pose24">    Step 1:- Stand with feet hip-width apart. \n\n
+                             Step 2:- Lift one knee to your chest.\n\n
+                             Step 3:- Lower it and switch legs.\n\n
+                             </string>
+    <string name="pose25">    Step 1:-Sit on a chair with feet flat. \n\n
+                             Step 2:- Lift one knee up and then the other.\n\n
+                             Step 3:- Continue alternating in a controlled motion.\n\n
                             </string>
-    <string name="pose12">   Step 1:- Stand with your feet hip-width apart and knees slightly bent. \n\n
-                             Step 2:- Shuffle your feet alternately, shifting your weight from one foot to the other.\n\n
-                             Step 3:- Keep your arms bent and move them in a light boxing motion while continuing the shuffle. \n\n
+
+
+    <string name="pose26">    Step 1:-Sit or stand with a straight back. \n\n
+                             Step 2:- Slowly turn your head to one side.\n\n
+                             Step 3:- Hold, then return to center and switch sides.\n\n
+                             </string>
+    <string name="pose27">    Step 1:- Spread your fingers wide.\n\n
+                             Step 2:-  Bring your thumb and each finger together.\n\n
+                             Step 3:- Repeat to maintain hand mobility.\n\n
+                             </string>
+    <string name="pose28">    Step 1:-Sit in a chair with feet flat. \n\n
+                             Step 2:- Sit in a chair with feet flat.\n\n
+                             Step 3:-Sit in a chair with feet flat.  \n\n
                             </string>
-    <string name="pose13">   Step 1:- Stand with your back against a wall and feet about 6 inches away from it. \n\n
-                             Step 2:- Slowly slide down the wall into a partial squat, keeping your back straight. \n\n
-                             Step 3:- Push back up to the starting position.
+    <string name="pose29">    Step 1:- Extend one arm with the palm up. \n\n
+                             Step 2:- Use the other hand to gently pull the fingers back.\n\n
+                             Step 3:- Hold, then switch arms.\n\n
                             </string>
-    <string name="pose14">    Step 1:- Lie facedown on the floor with your arms extended in front of you and your leg extended behind you. \n\n
-                             Step 2:- In one movement,engage your glutes and lower back to raise your arms,legs,and chest off the floor.\n\n
-                             Step 3:- Hold for a count,then slowly return to the starting position.
+    <string name="pose30">   Step 1:- Sit or stand with good posture. \n\n
+                             Step 2:-Inhale deeply through your nose. \n\n
+                             Step 3:-Exhale slowly through your mouth. \n\n
                             </string>
-    <string name="pose15">   Step 1:- Stand, extend arms 90° to sides, bend forward 90° at waist.\n\n
-                             Step 2:- Looking at the floor, rotate torso to touch hand to foot, rotate for other hand. \n\n
-                             Step 3:- Head will follow chest action. </string>
+
+
+
+
+
+
+
 
 
     <!--Reasons for not growing height:-->
@@ -118,25 +190,27 @@
     </string-array>
 
 
-    <string-array name="title1_story" tools:ignore="DuplicateDefinition">
-
-        <item>Chess</item>
-        <item>Ludo</item>
-
-
+    <string-array name="title1_story">
+        <item>Play Chess</item>
+        <item>Play Ludo</item>
+        <item>Play Snake</item>
+        <item>Play Sudoku</item>
+        <item>Play Tetris</item>
+        <item>Play Checkers</item>
+        <item>Play Tic-Tac-Toe</item>
+        <item>Play Minesweeper</item>
     </string-array>
 
-
-    <string-array name="details1_story" tools:ignore="DuplicateDefinition">
-
-        <item>Chess</item>
-        <item>Ludo</item>
-
-    </string-array>
 
     <string-array name="details_story1_links">
-        <item>https://www.chess.com</item>
+        <item>https://www.chess.com/play</item>
         <item>https://www.ludoking.com</item>
+        <item>https://playsnake.org</item>
+        <item>https://sudoku.com</item>
+        <item>https://tetris.com/play-tetris</item>
+        <item>https://cardgames.io/checkers/</item>
+        <item>https://playtictactoe.org/</item>
+        <item>https://minesweeper.online/</item>
     </string-array>
 
 
