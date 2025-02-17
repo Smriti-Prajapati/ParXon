@@ -69,25 +69,11 @@ public class VoiceAssistantActivity extends AppCompatActivity {
     }
 
     private void handleVoiceCommand(String command) {
-        command = command.toLowerCase(); // Normalize the input to lowercase for easy comparison
-
-        if (command.contains("exercise")) {
-            speak("Starting your exercise session.");
+        if (command.toLowerCase().contains("exercise")) {
             startExercise();
-        } else if (command.contains("reminder")) {
-            speak("It's time for your exercises!");
+        } else if (command.toLowerCase().contains("reminder")) {
             showReminder();
-        } else if (command.contains("stage 1")) {
-            speak("Starting Stage 1 exercises.");
-            startStage1Exercise();
-        } else if (command.contains("stage 2")) {
-            speak("Starting Stage 2 exercises.");
-            startStage2Exercise();
-        } else if (command.contains("stage 3")) {
-            speak("Starting Stage 3 exercises.");
-            startStage3Exercise();
         } else {
-            speak("Sorry, I didn't understand that command.");
             showUnknownCommandMessage();
         }
     }
@@ -105,19 +91,7 @@ public class VoiceAssistantActivity extends AppCompatActivity {
     }
 
     private void startExercise() {
-        // Implement exercise start logic here
-    }
-
-    private void startStage1Exercise() {
-        // Implement Stage 1 specific logic here
-    }
-
-    private void startStage2Exercise() {
-        // Implement Stage 2 specific logic here
-    }
-
-    private void startStage3Exercise() {
-        // Implement Stage 3 specific logic here
+        // Implement exercise start logic
     }
 
     @Override

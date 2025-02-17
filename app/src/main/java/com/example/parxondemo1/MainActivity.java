@@ -1,5 +1,6 @@
 package com.example.parxondemo1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -24,13 +25,14 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final int VOICE_RECOGNITION_REQUEST_CODE = 1;
-    Button button1, button2, button3, button4, button5; // Added BMI and Water Intake buttons
+    Button button1, button2, button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
 
         SharedPreferences preferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
         boolean isLoggedIn = preferences.getBoolean("isLoggedIn", false);
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
             finish();
             return;
         }
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -54,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
         button1 = findViewById(R.id.startExercise1);
         button2 = findViewById(R.id.startExercise2);
         button3 = findViewById(R.id.startExercice3);
-        button4 = findViewById(R.id.bmiButton); // BMI Calculator button
-        button5 = findViewById(R.id.waterButton); // Water Intake button
 
         button1.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
@@ -69,16 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         button3.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity3.class);
-            startActivity(intent);
-        });
-
-        button4.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, BMICalculator.class);
-            startActivity(intent);
-        });
-
-        button5.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WaterIntakeCalculator.class);
             startActivity(intent);
         });
 
@@ -112,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleVoiceCommand(String command) {
+        // Convert the command to lowercase for case-insensitive matching
         command = command.toLowerCase();
 
         if (command.contains("stage")) {
@@ -121,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             if (stageNumber > 0 && exerciseNumber > 0) {
                 redirectToExercise(stageNumber, exerciseNumber);
             } else if (stageNumber > 0) {
+                // If only stage is mentioned, redirect to the stage activity
                 redirectToStage(stageNumber);
             } else {
                 Toast.makeText(this, "Invalid stage or exercise command.", Toast.LENGTH_LONG).show();
@@ -130,28 +124,53 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void redirectToStage(int stageNumber) {}
+    private void redirectToStage(int stageNumber) {
+
+    }
 
     private void redirectToExercise(int stageNumber, int exerciseNumber) {
         Intent intent;
 
         switch (stageNumber) {
             case 1:
-                intent = new Intent(this, SecondActivity.class);
+                intent = createExerciseIntent(stageNumber, exerciseNumber, SecondActivity.class, "activity_exercise_1.xml");
                 break;
             case 2:
-                intent = new Intent(this, SecondActivity2.class);
+                intent = createExerciseIntent(stageNumber, exerciseNumber, SecondActivity2.class, "activity_exercise_2.xml");
                 break;
             case 3:
-                intent = new Intent(this, SecondActivity3.class);
+                intent = createExerciseIntent(stageNumber, exerciseNumber, SecondActivity3.class, "activity_exercise_3.xml");
+                break;
+            case 4:
+                intent = createExerciseIntent(stageNumber, exerciseNumber, SecondActivity.class, "activity_exercise_4.xml");
                 break;
             default:
                 Toast.makeText(this, "Stage not supported.", Toast.LENGTH_SHORT).show();
                 return;
         }
 
-        startActivity(intent);
+        if (intent != null) {
+            startActivity(intent);
+        }
     }
+
+    private Intent createExerciseIntent(int stage, int exercise, Class<?> stageClass, String defaultLayout) {
+        Intent intent;
+
+        // Redirect based on the exercise number
+        if (exercise >= 1 && exercise <= 13) {
+            String exerciseActivityName = "activity_exercise_" + stage + "_" + exercise;
+            intent = new Intent(this, SecondActivity.class);
+            intent.putExtra("LAYOUT", exerciseActivityName);
+        } else {
+            Toast.makeText(this, "Exercise " + exercise + " for Stage " + stage + " is not supported.", Toast.LENGTH_SHORT).show();
+            return null;
+        }
+
+        return intent;
+    }
+
+
 
     private int extractNumberFromCommand(String command, String keyword) {
         if (command.contains(keyword)) {
@@ -167,6 +186,77 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         return -1;
+    }
+
+    private void redirectToStageAndExercise(String stage, String command) {
+        Intent intent;
+        if (command.contains("exercise")) {
+            // Extract the exercise number from the command
+            int exerciseNumber = extractExerciseNumber(command);
+            if (exerciseNumber > 0 && exerciseNumber <= 13) {
+                switch (stage) {
+                    case "1":
+                        if (exerciseNumber == 1) {
+                            intent = new Intent(this, SecondActivity.class); // Redirect to activity_second.xml
+                        } else {
+                            intent = new Intent(this, SecondActivity.class); // Redirect to activity_exercise_1.xml
+                            intent.putExtra("EXERCISE_NUMBER", exerciseNumber);
+                        }
+                        startActivity(intent);
+                        break;
+
+                    case "2":
+                        if (exerciseNumber == 1) {
+                            intent = new Intent(this, SecondActivity2.class); // Redirect to activity_second2.xml
+                        } else {
+                            intent = new Intent(this, SecondActivity.class); // Redirect to activity_exercise_1_2.xml
+                            intent.putExtra("EXERCISE_NUMBER", exerciseNumber);
+                        }
+                        startActivity(intent);
+                        break;
+
+                    case "3":
+                        if (exerciseNumber == 1) {
+                            intent = new Intent(this, SecondActivity3.class); // Redirect to activity_second3.xml
+                        } else {
+                            intent = new Intent(this, SecondActivity.class); // Redirect to activity_exercise_1_3.xml
+                            intent.putExtra("EXERCISE_NUMBER", exerciseNumber);
+                        }
+                        startActivity(intent);
+                        break;
+                }
+            } else {
+                Toast.makeText(this, "Exercise number must be between 1 and 13.", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            // If only the stage is mentioned, redirect to the first activity of the stage
+            switch (stage) {
+                case "1":
+                    intent = new Intent(this, SecondActivity.class); // Redirect to activity_second.xml
+                    startActivity(intent);
+                    break;
+                case "2":
+                    intent = new Intent(this, SecondActivity2.class); // Redirect to activity_second2.xml
+                    startActivity(intent);
+                    break;
+                case "3":
+                    intent = new Intent(this, SecondActivity3.class); // Redirect to activity_second3.xml
+                    startActivity(intent);
+                    break;
+            }
+        }
+    }
+
+    private int extractExerciseNumber(String command) {
+        String[] words = command.split("\\s+");
+        for (String word : words) {
+            try {
+                return Integer.parseInt(word);
+            } catch (NumberFormatException e) {
+                // Ignore non-numeric words
+            }
+        }
+        return -1; // Default if no number is found
     }
 
     @Override
@@ -218,5 +308,25 @@ public class MainActivity extends AppCompatActivity {
         myIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
         myIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(myIntent, "Share using"));
+    }
+
+    public void stage1(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void stage2(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity2.class);
+        startActivity(intent);
+    }
+
+    public void stage3(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity3.class);
+        startActivity(intent);
+    }
+
+    public void Games(View view) {
+        Intent intent = new Intent(MainActivity.this, GameActivity.class);
+        startActivity(intent);
     }
 }

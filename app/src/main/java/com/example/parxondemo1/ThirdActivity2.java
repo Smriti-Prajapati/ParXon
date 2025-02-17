@@ -20,12 +20,16 @@ import java.util.Locale;
 
 public class ThirdActivity2 extends AppCompatActivity {
     private TextToSpeech textToSpeech;
-    String buttonValue;
+
+    String buttonvalue;
     Button startBtn;
     private CountDownTimer countDownTimer;
     TextView mtextview;
     private boolean MTimeRunning;
     private long MTimeLeftmills;
+
+
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,18 +51,24 @@ public class ThirdActivity2 extends AppCompatActivity {
             }
         });
 
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+
         Intent intent = getIntent();
-        buttonValue = intent.getStringExtra("value");
+        buttonvalue = intent.getStringExtra("value");
 
-        int intValue = Integer.parseInt(buttonValue);
 
-        switch (intValue) {
+        int intvalue = Integer.valueOf(buttonvalue);
+
+
+        switch(intvalue){
+
             case 1:
                 setContentView(R.layout.activity_exercise_stage2_1);
                 break;
@@ -89,20 +99,32 @@ public class ThirdActivity2 extends AppCompatActivity {
             case 10:
                 setContentView(R.layout.activity_exercise_stage2_10);
                 break;
+
         }
 
-        startBtn = findViewById(R.id.startbutton);
-        mtextview = findViewById(R.id.time);
 
-        startBtn.setOnClickListener(view -> {
-            if (MTimeRunning) {
-                stopTimer();
-            } else {
-                startTimer();
+
+        startBtn = findViewById(R.id.startbutton);
+        mtextview=findViewById(R.id.time);
+
+
+        startBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(MTimeRunning)
+
+                {
+                    stoptimer();
+                }
+                else {
+                    startTimer();
+                }
             }
         });
-    }
 
+
+
+    }
     @Override
     protected void onDestroy() {
         if (textToSpeech != null) {
@@ -112,9 +134,12 @@ public class ThirdActivity2 extends AppCompatActivity {
         super.onDestroy();
     }
 
+
+
+
     public void speakInstructions(View view) {
         String instructions = "";
-        switch (buttonValue) {
+        switch (buttonvalue) {
             case "1":
                 instructions = getString(R.string.pose16);
                 break;
@@ -145,6 +170,7 @@ public class ThirdActivity2 extends AppCompatActivity {
             case "10":
                 instructions = getString(R.string.pose25);
                 break;
+
         }
 
         if (!instructions.isEmpty()) {
@@ -152,58 +178,79 @@ public class ThirdActivity2 extends AppCompatActivity {
         }
     }
 
-    private void stopTimer() {
+    private void stoptimer()
+    {
         countDownTimer.cancel();
-        MTimeRunning = false;
+        MTimeRunning=false;
         startBtn.setText("START");
+
     }
-
-    private void startTimer() {
+    private void startTimer()
+    {
         final CharSequence value1 = mtextview.getText();
-        String num1 = value1.toString().substring(0, 2);
-        String num2 = value1.toString().substring(3, 5);
+        String num1=value1.toString();
+        String num2=num1.substring(0,2);
+        String num3=num1.substring(3,5);
 
-        final int number = Integer.parseInt(num1) * 60 + Integer.parseInt(num2);
-        MTimeLeftmills = number * 1000;
+        final int number = Integer.valueOf(num2)*60+ Integer.valueOf(num3);
+        MTimeLeftmills=number*1000;
 
-        countDownTimer = new CountDownTimer(MTimeLeftmills, 1000) {
+
+        countDownTimer=new CountDownTimer(MTimeLeftmills,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                MTimeLeftmills = millisUntilFinished;
+
+                MTimeLeftmills=millisUntilFinished;
                 updateTimer();
+
+
+
             }
 
             @Override
             public void onFinish() {
-                int newValue = Integer.parseInt(buttonValue) + 1;
-                if (newValue <= 10) {
-                    Intent intent = new Intent(ThirdActivity2.this, ThirdActivity2.class);
+                int newvalue=Integer.valueOf(buttonvalue)+1;
+                if (newvalue<=7){
+
+                    Intent intent = new Intent(ThirdActivity2.this,ThirdActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.putExtra("value", String.valueOf(newValue));
+                    intent.putExtra("value",String.valueOf(newvalue));
                     startActivity(intent);
-                } else {
-                    newValue = 1;
-                    Intent intent = new Intent(ThirdActivity2.this, ThirdActivity2.class);
+
+                }
+                else{
+                    newvalue=1;
+                    Intent intent=new Intent(ThirdActivity2.this,ThirdActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.putExtra("value", String.valueOf(newValue));
+                    intent.putExtra("value",String.valueOf(newvalue));
                     startActivity(intent);
                 }
+
             }
         }.start();
         startBtn.setText("Pause");
-        MTimeRunning = true;
+        MTimeRunning=true;
+
+
     }
 
-    private void updateTimer() {
-        int minutes = (int) MTimeLeftmills / 60000;
-        int seconds = (int) MTimeLeftmills % 60000 / 1000;
+    private void updateTimer()
+    {
+        int minutes = (int) MTimeLeftmills/60000;
+        int seconds = (int) MTimeLeftmills%60000 / 1000;
 
-        String timeLeftText = "";
-        if (minutes < 10) timeLeftText += "0";
-        timeLeftText += minutes + ":";
-        if (seconds < 10) timeLeftText += "0";
-        timeLeftText += seconds;
+
+
+        String timeLeftText="";
+        if(minutes<10)
+            timeLeftText="0";
+        timeLeftText = timeLeftText+minutes+":";
+        if(seconds<10)
+            timeLeftText+="0";
+        timeLeftText+=seconds;
         mtextview.setText(timeLeftText);
+
+
     }
 
     @Override

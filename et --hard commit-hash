@@ -1,9 +1,0 @@
-[33m152d855[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrecovery-branch[m[33m)[m HEAD@{0}: reset: moving to 152d855
-[33m152d855[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrecovery-branch[m[33m)[m HEAD@{1}: reset: moving to 152d855
-[33m152d855[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrecovery-branch[m[33m)[m HEAD@{2}: reset: moving to 152d855
-[33m4824a6d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{3}: checkout: moving from main to recovery-branch
-[33m4824a6d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{4}: commit: removed gradle property
-[33m5620454[m HEAD@{5}: pull origin main: Merge made by the 'ort' strategy.
-[33m152d855[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrecovery-branch[m[33m)[m HEAD@{6}: commit (amend): added bmi and water, changes exercises
-[33m802eb95[m HEAD@{7}: commit: added bmi and water, changes exercises
-[33ma481cce[m HEAD@{8}: clone: from https://github.com/anshika-singh002/ParXon.git

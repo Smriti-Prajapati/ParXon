@@ -7,52 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".GameActivity">
 
-    <!-- App Bar (Toolbar) -->
+
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
 
+
+
+
+        >
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+
+
+
+
+
+            >
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolBar"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/colorPrimary">
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="?colorPrimary"
 
-                <!-- Back Button -->
+
+
+
+                >
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="gamegoback"
+                    android:scaleType="fitXY"
                     android:src="@drawable/baseline_arrow_back_ios_new_24"
-                    android:padding="10dp"/>
 
-                <!-- Title -->
+                    />
+
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="10.0dp"
                     android:text="GAMES"
                     android:textColor="#FFF"
-                    android:textSize="20dp"
+                    android:textSize="20.0dp"
                     android:textStyle="bold"
-                    android:paddingLeft="10dp"/>
+
+
+                    />
+
+
+
+
+
+
+
+
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
 
+
+
     </LinearLayout>
 
-    <!-- Game List -->
-    <ListView
-        android:id="@+id/list"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/linear"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"/>
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/linear"
+
+
+
+
+        >
+
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/list">
+
+
+
+
+
+
+        </ListView>
+
+
+    </RelativeLayout>
+
+
+
 </RelativeLayout>
