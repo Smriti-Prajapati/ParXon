@@ -190,25 +190,27 @@
     </string-array>
 
 
-    <string-array name="title1_story" tools:ignore="DuplicateDefinition">
-
-        <item>Chess</item>
-        <item>Ludo</item>
-
-
+    <string-array name="title1_story">
+        <item>Play Chess</item>
+        <item>Play Ludo</item>
+        <item>Play Snake</item>
+        <item>Play Sudoku</item>
+        <item>Play Tetris</item>
+        <item>Play Checkers</item>
+        <item>Play Tic-Tac-Toe</item>
+        <item>Play Minesweeper</item>
     </string-array>
 
-
-    <string-array name="details1_story" tools:ignore="DuplicateDefinition">
-
-        <item>Chess</item>
-        <item>Ludo</item>
-
-    </string-array>
 
     <string-array name="details_story1_links">
-        <item>https://www.chess.com</item>
+        <item>https://www.chess.com/play</item>
         <item>https://www.ludoking.com</item>
+        <item>https://playsnake.org</item>
+        <item>https://sudoku.com</item>
+        <item>https://tetris.com/play-tetris</item>
+        <item>https://cardgames.io/checkers/</item>
+        <item>https://playtictactoe.org/</item>
+        <item>https://minesweeper.online/</item>
     </string-array>
 
 

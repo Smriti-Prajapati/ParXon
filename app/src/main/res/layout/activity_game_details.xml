@@ -8,14 +8,12 @@
     android:background="#FFF"
     tools:context=".GameActivityDetails">
 
-    <!-- Main Layout for AppBar and Content -->
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- AppBar with Toolbar -->
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -23,64 +21,57 @@
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="fill_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="center"
-                android:gravity="center"
                 android:background="@color/colorPrimary">
 
-                <!-- Back Arrow Icon -->
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
                     android:onClick="goback"
-                    android:src="@drawable/baseline_arrow_back_ios_new_24"
-                    android:contentDescription="Back Arrow" /> <!-- Direct content description -->
+                    android:src="@drawable/baseline_arrow_back_ios_new_24"/>
 
-                <!-- Toolbar Title Text -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:paddingLeft="10.0dp"
-                    android:text="GAMES"
+                    android:paddingLeft="10dp"
+                    android:text="GAME DETAILS"
                     android:textColor="#FFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
-
     </LinearLayout>
 
-    <!-- ScrollView for Game Details and Play Button -->
     <ScrollView
         android:layout_below="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Game Description Text -->
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:id="@+id/txt"
-            android:text="Loading..."
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:gravity="center" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Game Instructions"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <Button
+                android:id="@+id/play_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Game"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"/>
+        </LinearLayout>
 
     </ScrollView>
-
-    <!-- Play Game Button (Initially Hidden) -->
-    <Button
-        android:id="@+id/play_game_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play Game"
-        android:textSize="16sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:visibility="gone" />
 
 </RelativeLayout>
