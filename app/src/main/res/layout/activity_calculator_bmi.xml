@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
+    android:background="@drawable/finalimageloginbg">  <!-- 🔹 Matches login screen background -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculator"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkestgreen"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/weightInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter weight (kg)"
+        android:background="@drawable/custom_edittext"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="8dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textColorHighlight="@color/colorLightButton"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/heightInput"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter height (cm)"
+        android:background="@drawable/custom_edittext"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="8dp"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textColorHighlight="@color/colorLightButton"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Calculate BMI"
+        android:textSize="18sp"
+        android:backgroundTint="@color/colorButton"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your BMI result will appear here"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkestgreen"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>
