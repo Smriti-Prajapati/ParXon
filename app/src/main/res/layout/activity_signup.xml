@@ -13,15 +13,9 @@
     android:background="@drawable/loginpageimage"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ParXon"
-        android:id="@+id/parxontext"
-        android:textSize="60dp"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="@color/colorDarkestgreen"/>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,6 +25,7 @@
         app:cardElevation="20dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,13 +37,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
-                android:id="@+id/loginText"
+                android:text="Sign up"
+                android:id="@+id/signUpText"
                 android:textSize="36dp"
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:textColor="@color/colorDarkestgreen"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/email_id"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:hint="Email id"
+                android:textColor="@color/colorDarkestgreen"
+                android:textColorHighlight="@color/colorLightButton"
+                android:layout_marginTop="40dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -78,32 +85,25 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/loginButton"
-                android:text="Login"
+                android:id="@+id/RegisterButton"
+                android:text="Register"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/colorButton"/>
 
-            <!-- Centering the "Sign up" button -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="20dp">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="2dp"
-                    android:text=" Sign up"
-                    android:textSize="14sp"
-                    android:textAlignment="center"
-                    android:id="@+id/signUpButton"
-                    android:backgroundTint="@color/colorButton"/>
-            </LinearLayout>
 
         </LinearLayout>
 
+
+
+
+
     </LinearLayout>
+
+
+
+
+
 
 </LinearLayout>

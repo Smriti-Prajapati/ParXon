@@ -220,6 +220,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Intent.createChooser(myIntent, "Share using"));
     }
 
+    public void stage1(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        startActivity(intent);
+    }
+
+    public void stage2(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity2.class);
+        startActivity(intent);
+    }
+
+    public void stage3(View view) {
+        Intent intent = new Intent(MainActivity.this, SecondActivity3.class);
+        startActivity(intent);
+    }
+
+
+
+
     public void Games(View view) {
         Intent intent = new Intent(MainActivity.this, GameActivity.class);
         startActivity(intent);

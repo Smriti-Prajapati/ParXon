@@ -47,11 +47,13 @@ public class SplashScreenOk extends AppCompatActivity {
             SharedPreferences preferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
             boolean isLoggedIn = preferences.getBoolean("isLoggedIn", false);
 
+
             if (isLoggedIn) {
                 startActivity(new Intent(SplashScreenOk.this, MainActivity.class));
             } else {
                 startActivity(new Intent(SplashScreenOk.this, LoginActivity.class));
             }
+
             finish();
         }, 3500);
 

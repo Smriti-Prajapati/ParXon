@@ -16,6 +16,14 @@
         android:theme="@style/Theme.ParXonDemo1"
         tools:targetApi="31">
 
+
+
+
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity android:name=".Role"/>
+
         <!-- 🔹 Splash Screen (Launch Activity) -->
         <activity
             android:name=".SplashScreenOk"
