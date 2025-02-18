@@ -84,7 +84,30 @@ public class ThirdActivity3 extends AppCompatActivity {
             case 5:
                 setContentView(R.layout.activity_exercise_stage3_5);
                 break;
-
+            case 6:
+                setContentView(R.layout.activity_exercise_stage1_6);
+                break;
+            case 7:
+                setContentView(R.layout.activity_exercise_stage1_7);
+                break;
+            case 8:
+                setContentView(R.layout.activity_exercise_stage1_8);
+                break;
+            case 9:
+                setContentView(R.layout.activity_exercise_stage1_9);
+                break;
+            case 10:
+                setContentView(R.layout.activity_exercise_stage1_10);
+                break;
+            case 11:
+                setContentView(R.layout.activity_exercise_stage1_11);
+                break;
+            case 12:
+                setContentView(R.layout.activity_exercise_stage1_12);
+                break;
+            case 13:
+                setContentView(R.layout.activity_exercise_stage1_13);
+                break;
 
         }
 

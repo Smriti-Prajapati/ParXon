@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:backgroundTint="@color/bgcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/loginpageimage"
+    tools:context=".LoginActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient Details"
+        android:id="@+id/parxontext"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkestgreen"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:cardCornerRadius="100dp"
+        app:cardElevation="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/patientname"
+                android:background="@drawable/backgroundcrop"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:hint=" Name"
+                android:textStyle="bold"
+                android:textColorHint="@color/colorDarkestgreen"
+
+                android:layout_marginTop="40dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/patientemail"
+                android:background="@drawable/backgroundcrop"
+                android:textStyle="bold"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:hint=" Patient's Email "
+                android:textColorHint="@color/colorDarkestgreen"
+                android:layout_marginTop="40dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/patientstage"
+                android:background="@drawable/backgroundcrop"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:hint=" Stage"
+                android:textStyle="bold"
+                android:textColorHint="@color/colorDarkestgreen"
+                android:layout_marginTop="40dp"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/SaveButton"
+                android:text="Save"
+                android:textSize="18sp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/colorButton"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final int VOICE_RECOGNITION_REQUEST_CODE = 1;
-    Button button1, button2, button3, button4, button5; // Added BMI and Water Intake buttons
+    Button button1, button2, button3, button4, button5, exerciseTrackerButton; // Added Exercise Tracker button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +51,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
 
+        // Initializing buttons
         button1 = findViewById(R.id.startExercise1);
         button2 = findViewById(R.id.startExercise2);
         button3 = findViewById(R.id.startExercice3);
         button4 = findViewById(R.id.bmiButton); // BMI Calculator button
         button5 = findViewById(R.id.waterButton); // Water Intake button
 
+
+        // Setting up button actions
         button1.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
@@ -82,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        // Voice recognition button
         Button startVoiceButton = findViewById(R.id.startVoiceButton);
         startVoiceButton.setOnClickListener(view -> startVoiceRecognition());
     }
@@ -234,9 +239,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, SecondActivity3.class);
         startActivity(intent);
     }
-
-
-
 
     public void Games(View view) {
         Intent intent = new Intent(MainActivity.this, GameActivity.class);

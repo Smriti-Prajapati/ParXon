@@ -22,6 +22,9 @@
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
+        <activity
+            android:name=".PatientDetails"
+            android:exported="false" />
         <activity android:name=".Role"/>
 
         <!-- 🔹 Splash Screen (Launch Activity) -->
@@ -52,7 +55,6 @@
         <activity android:name=".ThirdActivity2" android:exported="false" />
         <activity android:name=".ThirdActivity3" android:exported="false" />
 
-        <!-- 🔹 Health Calculators -->
         <activity android:name=".BMICalculator"
             android:exported="true"
             android:label="BMI Calculator" />
@@ -60,6 +62,9 @@
         <activity android:name=".WaterIntakeCalculator"
             android:exported="true"
             android:label="Water Intake" />
+
+
+
 
 
 

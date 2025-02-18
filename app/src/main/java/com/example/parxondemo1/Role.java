@@ -49,7 +49,7 @@ public class Role extends AppCompatActivity {
                 editor.putBoolean("isLoggedIn", true); // Mark user as logged in
                 editor.apply();
 
-                Intent intent = new Intent(Role.this, MainActivity.class);
+                Intent intent = new Intent(Role.this, PatientDetails.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
 
