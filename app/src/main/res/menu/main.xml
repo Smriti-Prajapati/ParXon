@@ -29,9 +29,16 @@
 
         />
     <item
-        android:title="Share"
-        android:id="@+id/id_share"
-        android:orderInCategory="104"
+    android:title="Share"
+    android:id="@+id/id_share"
+    android:orderInCategory="104"
+
+
+        />
+    <item
+        android:title="Logout"
+        android:id="@+id/id_logout"
+        android:orderInCategory="105"
 
 
         />
