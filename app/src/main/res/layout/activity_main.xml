@@ -13,7 +13,7 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/cardview_light_background"
+        android:background="#c0d9d1"
         android:gravity="end"
         android:textAlignment="textEnd"
         android:theme="@style/ThemeOverlay.AppCompat.Light"
@@ -25,7 +25,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="ParXon"
+            android:layout_marginRight="15sp"
             android:textColor="#3c7962"
+            android:background="#c0d9d1"
             android:textSize="24sp"
             android:textStyle="bold" /><![CDATA[
 
@@ -44,12 +46,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-            <Button
-                android:id="@+id/startVoiceButton"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="Start Voice Assistant" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -105,13 +101,19 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2.0"
-                        >
+                        tools:ignore="Orientation">
 
                         <pl.droidsonroids.gif.GifImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:src="@drawable/exercise_6"
                             />
+
+                        <Button
+                            android:id="@+id/startVoiceButton"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Start Voice Assistant" />
 
                     </LinearLayout>
 
