@@ -194,6 +194,10 @@ public class MainActivity extends AppCompatActivity {
             shareApp();
             return true;
         }
+        else if (id == R.id.id_logout) {
+            logoutUser();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -218,6 +222,19 @@ public class MainActivity extends AppCompatActivity {
         myIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
         myIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(myIntent, "Share using"));
+    }
+    private void logoutUser() {
+        // Clear login state
+        SharedPreferences preferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("isLoggedIn", false);
+        editor.apply();
+
+        // Redirect to login page
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear backstack
+        startActivity(intent);
+        finish();
     }
 
     public void stage1(View view) {
