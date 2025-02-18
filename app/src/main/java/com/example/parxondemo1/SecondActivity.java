@@ -90,6 +90,15 @@ public class SecondActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(myIntent, "share using"));
             return true;
         }
+        if (id == R.id.id_logout) {
+            // Clear session and redirect to login screen
+            Intent intent = new Intent(SecondActivity.this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clears activity stack
+            startActivity(intent);
+            finish();
+            return true;
+        }
+
         return true;
     }
 
