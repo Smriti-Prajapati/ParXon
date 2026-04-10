@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/finalimageloginbg">
@@ -36,7 +37,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <!-- Timer Button -->
+            <!-- Timer Display Button -->
             <Button
                 android:id="@+id/time"
                 android:layout_width="220dp"
@@ -57,39 +58,37 @@
                 android:layout_gravity="center"
                 android:text="How To Do This?"
                 android:onClick="speakInstructions"
-
                 android:backgroundTint="@color/colorButton"
                 android:textColor="#FFF"
                 android:textSize="18sp"
                 android:layout_marginTop="10dp"/>
 
-            <!-- Card View for Pose Description -->
+            <!-- Pose Description -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
                 app:cardBackgroundColor="@android:color/white"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical">
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/pose26"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:padding="16dp"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pose26"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
     </ScrollView>
-
 </RelativeLayout>
-

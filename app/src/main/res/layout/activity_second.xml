@@ -1970,7 +1970,66 @@
 
 
 
+                <LinearLayout android:onClick="Imagebuttonclick" android:id="@+id/Exercise_14"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="10dp" android:gravity="center_vertical">
 
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="2" android:orientation="vertical">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Exercise 14" android:textStyle="bold" android:textColor="#000"
+                            android:textSize="18sp" />
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Repeat 2 times" android:textSize="14sp" />
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="01:00 MIN" android:textColor="#3c7962" android:textStyle="bold"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <pl.droidsonroids.gif.GifImageView android:layout_width="100dp"
+                        android:layout_height="100dp" android:layout_marginStart="10dp"
+                        android:src="@drawable/exercise_14" />
+
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="#aaa9a9" />
+
+                <!-- EXERCISE 15 -->
+                <LinearLayout android:onClick="Imagebuttonclick" android:id="@+id/Exercise_15"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="10dp" android:gravity="center_vertical">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="2" android:orientation="vertical">
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Exercise 15" android:textStyle="bold" android:textColor="#000"
+                            android:textSize="18sp" />
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Repeat 2 times" android:textSize="14sp" />
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="01:00 MIN" android:textColor="#3c7962" android:textStyle="bold"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <pl.droidsonroids.gif.GifImageView android:layout_width="100dp"
+                        android:layout_height="100dp" android:layout_marginStart="10dp"
+                        android:src="@drawable/exercise_15" />
+
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="#aaa9a9" />
 
             </LinearLayout>
 

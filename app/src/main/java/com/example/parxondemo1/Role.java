@@ -37,7 +37,6 @@ public class Role extends AppCompatActivity {
                 Intent intent = new Intent(Role.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-
             }
         });
 
@@ -49,10 +48,10 @@ public class Role extends AppCompatActivity {
                 editor.putBoolean("isLoggedIn", true); // Mark user as logged in
                 editor.apply();
 
-                Intent intent = new Intent(Role.this, PatientDetails.class);
+                // ✅ FIXED LINE:
+                Intent intent = new Intent(Role.this, CaregiverDashboardActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-
             }
         });
 

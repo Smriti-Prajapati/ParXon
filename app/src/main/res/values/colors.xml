@@ -7,4 +7,7 @@
     <color name="colorLightButton">#77bba2</color>
     <color name="colorDarkestgreen">#0d522c</color>
     <color name="bgcolor">#c0d8d0</color>
+
+    <!-- Menu text color for light mode -->
+    <color name="menu_item_text_color">#000000</color>
 </resources>

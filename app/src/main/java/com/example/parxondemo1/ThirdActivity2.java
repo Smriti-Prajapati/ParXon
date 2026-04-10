@@ -19,17 +19,14 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.Locale;
 
 public class ThirdActivity2 extends AppCompatActivity {
-    private TextToSpeech textToSpeech;
 
+    private TextToSpeech textToSpeech;
     String buttonvalue;
     Button startBtn;
     private CountDownTimer countDownTimer;
     TextView mtextview;
     private boolean MTimeRunning;
     private long MTimeLeftmills;
-
-
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -42,16 +39,10 @@ public class ThirdActivity2 extends AppCompatActivity {
             if (status == TextToSpeech.SUCCESS) {
                 int result = textToSpeech.setLanguage(Locale.US);
                 if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                    Log.e("TTS", "Language not supported or missing data");
-                } else {
-                    Log.d("TTS", "TextToSpeech initialized successfully");
+                    Log.e("TTS", "Language not supported");
                 }
-            } else {
-                Log.e("TTS", "Initialization failed");
             }
         });
-
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -59,118 +50,45 @@ public class ThirdActivity2 extends AppCompatActivity {
             return insets;
         });
 
+        buttonvalue = getIntent().getStringExtra("value");
+        int intvalue = Integer.parseInt(buttonvalue);
 
-        Intent intent = getIntent();
-        buttonvalue = intent.getStringExtra("value");
-
-
-        int intvalue = Integer.valueOf(buttonvalue);
-
-
-        switch(intvalue){
-
-            case 1:
-                setContentView(R.layout.activity_exercise_stage2_1);
-                break;
-            case 2:
-                setContentView(R.layout.activity_exercise_stage2_2);
-                break;
-            case 3:
-                setContentView(R.layout.activity_exercise_stage2_3);
-                break;
-            case 4:
-                setContentView(R.layout.activity_exercise_stage2_4);
-                break;
-            case 5:
-                setContentView(R.layout.activity_exercise_stage2_5);
-                break;
-            case 6:
-                setContentView(R.layout.activity_exercise_stage2_6);
-                break;
-            case 7:
-                setContentView(R.layout.activity_exercise_stage2_7);
-                break;
-            case 8:
-                setContentView(R.layout.activity_exercise_stage2_8);
-                break;
-            case 9:
-                setContentView(R.layout.activity_exercise_stage2_9);
-                break;
-            case 10:
-                setContentView(R.layout.activity_exercise_stage2_10);
-                break;
-
+        if (intvalue >= 16 && intvalue <= 25) {
+            setContentView(getResources().getIdentifier("activity_exercise_stage2_" + (intvalue - 15), "layout", getPackageName()));
+        } else if (intvalue >= 26 && intvalue <= 30) {
+            setContentView(getResources().getIdentifier("activity_exercise_stage3_" + (intvalue - 25), "layout", getPackageName()));
         }
-
-
 
         startBtn = findViewById(R.id.startbutton);
-        mtextview=findViewById(R.id.time);
+        mtextview = findViewById(R.id.time);
 
-
-        startBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(MTimeRunning)
-
-                {
-                    stoptimer();
-                }
-                else {
-                    startTimer();
-                }
+        startBtn.setOnClickListener(view -> {
+            if (MTimeRunning) {
+                stoptimer();
+            } else {
+                startTimer();
             }
         });
-
-
-
     }
-    @Override
-    protected void onDestroy() {
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
-        super.onDestroy();
-    }
-
-
-
 
     public void speakInstructions(View view) {
         String instructions = "";
         switch (buttonvalue) {
-            case "1":
-                instructions = getString(R.string.pose16);
-                break;
-            case "2":
-                instructions = getString(R.string.pose17);
-                break;
-            case "3":
-                instructions = getString(R.string.pose18);
-                break;
-            case "4":
-                instructions = getString(R.string.pose19);
-                break;
-            case "5":
-                instructions = getString(R.string.pose20);
-                break;
-            case "6":
-                instructions = getString(R.string.pose21);
-                break;
-            case "7":
-                instructions = getString(R.string.pose22);
-                break;
-            case "8":
-                instructions = getString(R.string.pose23);
-                break;
-            case "9":
-                instructions = getString(R.string.pose24);
-                break;
-            case "10":
-                instructions = getString(R.string.pose25);
-                break;
-
+            case "16": instructions = getString(R.string.pose16); break;
+            case "17": instructions = getString(R.string.pose17); break;
+            case "18": instructions = getString(R.string.pose18); break;
+            case "19": instructions = getString(R.string.pose19); break;
+            case "20": instructions = getString(R.string.pose20); break;
+            case "21": instructions = getString(R.string.pose21); break;
+            case "22": instructions = getString(R.string.pose22); break;
+            case "23": instructions = getString(R.string.pose23); break;
+            case "24": instructions = getString(R.string.pose24); break;
+            case "25": instructions = getString(R.string.pose25); break;
+            case "26": instructions = getString(R.string.pose26); break;
+            case "27": instructions = getString(R.string.pose27); break;
+            case "28": instructions = getString(R.string.pose28); break;
+            case "29": instructions = getString(R.string.pose29); break;
+            case "30": instructions = getString(R.string.pose30); break;
         }
 
         if (!instructions.isEmpty()) {
@@ -178,79 +96,56 @@ public class ThirdActivity2 extends AppCompatActivity {
         }
     }
 
-    private void stoptimer()
-    {
+    private void stoptimer() {
         countDownTimer.cancel();
-        MTimeRunning=false;
+        MTimeRunning = false;
         startBtn.setText("START");
-
     }
-    private void startTimer()
-    {
-        final CharSequence value1 = mtextview.getText();
-        String num1=value1.toString();
-        String num2=num1.substring(0,2);
-        String num3=num1.substring(3,5);
 
-        final int number = Integer.valueOf(num2)*60+ Integer.valueOf(num3);
-        MTimeLeftmills=number*1000;
+    private void startTimer() {
+        final String[] splitTime = mtextview.getText().toString().split(":");
+        int minutes = Integer.parseInt(splitTime[0]);
+        int seconds = Integer.parseInt(splitTime[1]);
+        MTimeLeftmills = (minutes * 60 + seconds) * 1000L;
 
-
-        countDownTimer=new CountDownTimer(MTimeLeftmills,1000) {
+        countDownTimer = new CountDownTimer(MTimeLeftmills, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-
-                MTimeLeftmills=millisUntilFinished;
+                MTimeLeftmills = millisUntilFinished;
                 updateTimer();
-
-
-
             }
 
             @Override
             public void onFinish() {
-                int newvalue=Integer.valueOf(buttonvalue)+1;
-                if (newvalue<=7){
-
-                    Intent intent = new Intent(ThirdActivity2.this,ThirdActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.putExtra("value",String.valueOf(newvalue));
+                int nextExercise = Integer.parseInt(buttonvalue) + 1;
+                if (nextExercise <= 30) {
+                    Intent intent = new Intent(ThirdActivity2.this, ThirdActivity2.class);
+                    intent.putExtra("value", String.valueOf(nextExercise));
                     startActivity(intent);
-
+                    finish();
+                } else {
+                    finish(); // finish after 30
                 }
-                else{
-                    newvalue=1;
-                    Intent intent=new Intent(ThirdActivity2.this,ThirdActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.putExtra("value",String.valueOf(newvalue));
-                    startActivity(intent);
-                }
-
             }
         }.start();
         startBtn.setText("Pause");
-        MTimeRunning=true;
-
-
+        MTimeRunning = true;
     }
 
-    private void updateTimer()
-    {
-        int minutes = (int) MTimeLeftmills/60000;
-        int seconds = (int) MTimeLeftmills%60000 / 1000;
+    private void updateTimer() {
+        int minutes = (int) MTimeLeftmills / 60000;
+        int seconds = (int) MTimeLeftmills % 60000 / 1000;
+        String timeLeft = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds);
+        mtextview.setText(timeLeft);
+    }
 
-
-
-        String timeLeftText="";
-        if(minutes<10)
-            timeLeftText="0";
-        timeLeftText = timeLeftText+minutes+":";
-        if(seconds<10)
-            timeLeftText+="0";
-        timeLeftText+=seconds;
-        mtextview.setText(timeLeftText);
-
-
+    @Override
+    protected void onDestroy() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+            textToSpeech.shutdown();
+        }
+        super.onDestroy();
     }
 
     @Override

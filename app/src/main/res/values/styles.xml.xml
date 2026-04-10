@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <!-- Base application theme. -->
+
+    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here.-->
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorprimary</item>
         <item name="colorPrimaryDark">@color/colorprimarydark</item>
         <item name="colorAccent">@color/coloraccent</item>
 
-
-
+        <!-- Apply custom popup menu style -->
+        <item name="popupMenuStyle">@style/CustomPopupMenu</item>
     </style>
+
+    <!-- Custom Popup Menu Text Color -->
+    <style name="CustomPopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@color/menu_item_text_color</item>
+    </style>
+
 </resources>

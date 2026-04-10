@@ -46,6 +46,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <Button
+                android:id="@+id/voiceCommandButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Voice Command"
+                android:onClick="startVoiceRecognition" />
+
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -473,6 +480,8 @@
                 android:backgroundTint="#3c7962"
                 android:textColor="@android:color/white"
                 android:layout_marginTop="20dp"/>
+
+
 
 
 

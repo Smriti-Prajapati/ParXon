@@ -1,8 +1,3 @@
-val implementation: Unit
-    get() {
-        TODO()
-    }
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
@@ -31,6 +26,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -38,22 +34,24 @@ android {
 }
 
 dependencies {
-
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.firebase.messaging)
+
+    // Firebase libraries
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation("com.google.firebase:firebase-firestore:24.10.0")
+
+    // GIF support
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.27")
+
+    // ✅ FIXED core dependency (instead of libs.core)
+    implementation("androidx.core:core-ktx:1.12.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
-    implementation("com.google.android.material:material:1.0.0")
-    implementation("com.google.firebase:firebase-messaging:23.0.0")
-
-
-
-
-
-
 }

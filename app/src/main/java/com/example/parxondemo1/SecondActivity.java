@@ -44,7 +44,7 @@ public class SecondActivity extends AppCompatActivity {
         newArray = new int[]{
                 R.id.Exercise_1, R.id.Exercise_2, R.id.Exercise_3, R.id.Exercise_4, R.id.Exercise_5,
                 R.id.Exercise_6, R.id.Exercise_7, R.id.Exercise_8, R.id.Exercise_9, R.id.Exercise_10,
-                R.id.Exercise_11, R.id.Exercise_12, R.id.Exercise_13,
+                R.id.Exercise_11, R.id.Exercise_12, R.id.Exercise_13,R.id.Exercise_14, R.id.Exercise_15,
         };
     }
 

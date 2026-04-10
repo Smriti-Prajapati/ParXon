@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:title="Privacy Policy"
-        android:id="@+id/id_privacy"
-        android:orderInCategory="100"
-
-        />
-    <item
-        android:title="Terms and Conditions"
-        android:id="@+id/id_term"
-        android:orderInCategory="101"
-
-
-        />
-    <item
-        android:title="Rate Us"
-        android:id="@+id/id_rate"
-        android:orderInCategory="102"
-
-
-        />
-    <item
-        android:title="More Apps"
-        android:id="@+id/id_more"
-        android:orderInCategory="103"
-
-
-        />
-    <item
-    android:title="Share"
-    android:id="@+id/id_share"
-    android:orderInCategory="104"
-
-
-        />
-    <item
-        android:title="Logout"
-        android:id="@+id/id_logout"
-        android:orderInCategory="105"
-
-
-        />
-
+    <item android:id="@+id/id_privacy" android:title="Privacy Policy" />
+    <item android:id="@+id/id_term" android:title="Terms and Conditions" />
+    <item android:id="@+id/id_rate" android:title="Rate Us" />
+    <item android:id="@+id/id_more" android:title="More Apps" />
+    <item android:id="@+id/id_share" android:title="Share" />
+    <item android:id="@+id/id_logout" android:title="Logout" />
 </menu>

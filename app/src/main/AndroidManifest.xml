@@ -16,38 +16,30 @@
         android:theme="@style/Theme.ParXonDemo1"
         tools:targetApi="31">
 
+        <activity android:name=".SignUpActivity" android:exported="false" />
+        <activity android:name=".PatientDetails" android:exported="false" />
+        <activity android:name=".Role" />
+        <activity android:name=".LoginActivity" android:exported="false" />
 
+        <!-- ✅ ADD THIS (Caregiver Activity) -->
+        <activity android:name=".CaregiverDashboardActivity" android:exported="true" />
 
-
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PatientDetails"
-            android:exported="false" />
-        <activity android:name=".Role"/>
-
-        <!-- 🔹 Splash Screen (Launch Activity) -->
-        <activity
-            android:name=".SplashScreenOk"
-            android:exported="true">
+        <!-- 🔹 Launch Screen -->
+        <activity android:name=".SplashScreenOk" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- 🔹 Main App Screens -->
+        <!-- 🔹 Main Activity -->
         <activity android:name=".MainActivity" android:exported="true" />
-        <activity android:name=".LoginActivity" android:exported="false" />
 
-
-
-        <!-- 🔹 Game Activities -->
+        <!-- 🔹 Game Screens -->
         <activity android:name=".GameActivity" android:exported="true" />
         <activity android:name=".GameActivityDetails" android:exported="true" />
 
-        <!-- 🔹 Exercise Activities -->
+        <!-- 🔹 Exercises -->
         <activity android:name=".SecondActivity" android:exported="false" />
         <activity android:name=".SecondActivity2" android:exported="false" />
         <activity android:name=".SecondActivity3" android:exported="false" />
@@ -55,22 +47,11 @@
         <activity android:name=".ThirdActivity2" android:exported="false" />
         <activity android:name=".ThirdActivity3" android:exported="false" />
 
-        <activity android:name=".BMICalculator"
-            android:exported="true"
-            android:label="BMI Calculator" />
+        <!-- 🔹 Health -->
+        <activity android:name=".BMICalculator" android:exported="true" android:label="BMI Calculator" />
+        <activity android:name=".WaterIntakeCalculator" android:exported="true" android:label="Water Intake" />
 
-        <activity android:name=".WaterIntakeCalculator"
-            android:exported="true"
-            android:label="Water Intake" />
-
-
-
-
-
-
-
-
-        <!-- 🔹 Firebase Messaging Service -->
+        <!-- 🔹 Firebase Messaging -->
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -80,5 +61,4 @@
         </service>
 
     </application>
-
 </manifest>

@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +17,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -24,7 +27,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final int VOICE_RECOGNITION_REQUEST_CODE = 1;
-    Button button1, button2, button3, button4, button5, exerciseTrackerButton; // Added Exercise Tracker button
+    Button button1, button2, button3, button4, button5, exerciseTrackerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,43 +58,32 @@ public class MainActivity extends AppCompatActivity {
         button1 = findViewById(R.id.startExercise1);
         button2 = findViewById(R.id.startExercise2);
         button3 = findViewById(R.id.startExercice3);
-        button4 = findViewById(R.id.bmiButton); // BMI Calculator button
-        button5 = findViewById(R.id.waterButton); // Water Intake button
+        button4 = findViewById(R.id.bmiButton);
+        button5 = findViewById(R.id.waterButton);
 
+        button1.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SecondActivity.class)));
+        button2.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SecondActivity2.class)));
+        button3.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, SecondActivity3.class)));
+        button4.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, BMICalculator.class)));
+        button5.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, WaterIntakeCalculator.class)));
 
-        // Setting up button actions
-        button1.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            startActivity(intent);
-        });
-
-        button2.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SecondActivity2.class);
-            startActivity(intent);
-        });
-
-        button3.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, SecondActivity3.class);
-            startActivity(intent);
-        });
-
-        button4.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, BMICalculator.class);
-            startActivity(intent);
-        });
-
-        button5.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, WaterIntakeCalculator.class);
-            startActivity(intent);
-        });
-
-
-        // Voice recognition button
         Button startVoiceButton = findViewById(R.id.startVoiceButton);
-        startVoiceButton.setOnClickListener(view -> startVoiceRecognition());
+        startVoiceButton.setOnClickListener(this::startVoiceRecognition);
+
+        // Handle intent from notification
+        handleNotificationIntent();
     }
 
-    private void startVoiceRecognition() {
+    // Method to handle notification intent
+    private void handleNotificationIntent() {
+        Intent intent = getIntent();
+        if (intent != null && intent.getBooleanExtra("fromNotification", false)) {
+            // Optional: Add any specific logic for notification-triggered entry
+            Toast.makeText(this, "Opened from notification", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void startVoiceRecognition(View view) {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak your command...");
@@ -135,11 +127,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void redirectToStage(int stageNumber) {}
+    private void redirectToStage(int stageNumber) {
+        // Optional: Implement this if needed
+    }
 
     private void redirectToExercise(int stageNumber, int exerciseNumber) {
         Intent intent;
-
         switch (stageNumber) {
             case 1:
                 intent = new Intent(this, SecondActivity.class);
@@ -154,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Stage not supported.", Toast.LENGTH_SHORT).show();
                 return;
         }
-
         startActivity(intent);
     }
 
@@ -177,6 +169,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+
+        // Apply theme-aware menu text color
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            SpannableString spanString = new SpannableString(item.getTitle());
+            spanString.setSpan(
+                    new ForegroundColorSpan(ContextCompat.getColor(this, R.color.menu_item_text_color)),
+                    0, spanString.length(), 0
+            );
+            item.setTitle(spanString);
+        }
+
         return true;
     }
 
@@ -193,13 +197,12 @@ public class MainActivity extends AppCompatActivity {
             openRatePage();
             return true;
         } else if (id == R.id.id_more) {
-            openUrl("https://play.google.com/store/apps/developer?id=Leap+Fitness+Group&hl=en");
+            openUrl("https://play.google.com/store/search?q=parkinson%20disease&c=apps");
             return true;
         } else if (id == R.id.id_share) {
             shareApp();
             return true;
-        }
-        else if (id == R.id.id_logout) {
+        } else if (id == R.id.id_logout) {
             logoutUser();
             return true;
         }
@@ -222,43 +225,34 @@ public class MainActivity extends AppCompatActivity {
     private void shareApp() {
         Intent myIntent = new Intent(Intent.ACTION_SEND);
         myIntent.setType("text/plain");
-        String shareBody = "The best app for Parkinson's Patients." + " https://play.google.com/store/apps/details?id=com.example.parxondemo1";
-        String shareSubject = "ParXon";
-        myIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+        String shareBody = "The best app for Parkinson's Patients. https://play.google.com/store/apps/details?id=" + getPackageName();
+        myIntent.putExtra(Intent.EXTRA_SUBJECT, "ParXon");
         myIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
         startActivity(Intent.createChooser(myIntent, "Share using"));
     }
-    private void logoutUser() {
-        // Clear login state
-        SharedPreferences preferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("isLoggedIn", false);
-        editor.apply();
 
-        // Redirect to login page
+    private void logoutUser() {
+        SharedPreferences preferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        preferences.edit().putBoolean("isLoggedIn", false).apply();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear backstack
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }
 
     public void stage1(View view) {
-        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(MainActivity.this, SecondActivity.class));
     }
 
     public void stage2(View view) {
-        Intent intent = new Intent(MainActivity.this, SecondActivity2.class);
-        startActivity(intent);
+        startActivity(new Intent(MainActivity.this, SecondActivity2.class));
     }
 
     public void stage3(View view) {
-        Intent intent = new Intent(MainActivity.this, SecondActivity3.class);
-        startActivity(intent);
+        startActivity(new Intent(MainActivity.this, SecondActivity3.class));
     }
 
     public void Games(View view) {
-        Intent intent = new Intent(MainActivity.this, GameActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(MainActivity.this, GameActivity.class));
     }
 }

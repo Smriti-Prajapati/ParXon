@@ -195,6 +195,12 @@ public class ThirdActivity extends AppCompatActivity {
             case "13":
                 instructions = getString(R.string.pose13);
                 break;
+            case "14":
+                instructions = getString(R.string.pose14);
+                break;
+            case "15":
+                instructions = getString(R.string.pose15);
+                break;
         }
 
         if (!instructions.isEmpty()) {
